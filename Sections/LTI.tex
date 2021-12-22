@@ -1,0 +1,22 @@
+\section{LTI-System}
+\todo{Woche 4, 11.10.2021}
+LTI-Systeme sind idealisierte Modelle mit Linearität und Zeitinvarianz. Der Operator $T$ bildet $x(t)$ am Eingang auf $y(t)$ ab.
+\begin{align*}
+	T[x_1(t) + x_2(t)] &= y_1(t) + y_2(t) \\
+	T[a\cdot x(t)] &= a\cdot y(t) \\
+	T[x(t - t_0)] &= y(t- t_0)
+\end{align*}
+
+Im Frequenzbereich ist es:
+\begin{align*}
+	Y(\omega) = X(\omega) \cdot H(\omega)
+\end{align*}
+
+
+Kausalität: Kausal, erst ab $t > 0$, Akausal bereits $t < 0$ werte.
+
+\subsection{Hilbert-Transformation}
+Verschiebt Frequenzen um -90° pro Frequenz. 
+\[
+\hat{x}(t) = \frac{1}{\pi}\int_{-\infty}^{\infty}\frac{x(\tau)}{t - \tau}d\tau
+\]

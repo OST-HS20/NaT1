@@ -1,15 +1,24 @@
 % Document information
-\newcommand{\titleinfo}{Zusammenfassung Template}
-\newcommand{\authorinfo}{Name Nachname}
+\newcommand{\titleinfo}{Zusammenfassung NatT1}
+\newcommand{\authorinfo}{Sandro Pedrett}
 \newcommand{\version}{1.0}
-\newcommand{\versioninfo}{FS21}
+\newcommand{\versioninfo}{HS21}
 % Header
 \include{Template/Header}
+
+% Open-book Prüfung, keine Limitierung
+\newcommand{\script}[1]{\verweisextern{script}{#1}}
 
 % Document
 \begin{document}
 
-\tableofcontents
-\input{Sections/First Section}
+
+\input{Sections/Einführung}
+\input{Sections/Fourier}
+\input{Sections/LTI}
+\input{Sections/Filter}
+\input{Sections/Modulation}
+\input{Sections/DigitaleSignalübertragung}
+\input{Sections/Idiotenseite}
 
 \end{document}
