@@ -1,4 +1,8 @@
 \section{Fourier-Theorie}
+\subsection{Trigonometrie ($z \in \mathbb{C})$}
+\[\sin(\omega t) = \frac{e^{j\omega t} -e^{-j\omega t}}{2j} \quad \cos(\omega t) = \frac{e^{j\omega t} +e^{-j\omega t}}{2}\]
+
+
 \subsection{Fourier-Reihe}
 Die Fourierreihe $FR$ von einer Funktion $f(t)$ besteht aus Fourierkoeffizienten:
 \[
@@ -75,15 +79,3 @@ Einige wichtige Eigenschaften, weitere sind im \script{24}\\
 \begin{align*}
 	\int_{-\infty}^{t}x(\tau)d\tau \transform X(\omega)\cdot \left(\frac{1}{j\omega} + \pi \delta(\omega)\right)
 \end{align*}
-
-
-\subsection{Hilbert-Transformation}
-Verschiebt Imaginärteil gegenüber Realteil um 90° bzw $\pi/2$ 
-\begin{align*}
-	\hat{x}(t) &= \frac{1}{\pi}\int_{-\infty}^{\infty}\frac{x(\tau)}{t - \tau}d\tau \\
-	\hat{X}(\omega) &= -j \cdot \sgn(\omega) \cdot X(\omega)
-\end{align*}
-
-\begin{center}
-	\includegraphics[width=0.6\columnwidth]{Images/hilbert}
-\end{center}

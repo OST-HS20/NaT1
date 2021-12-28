@@ -1,10 +1,7 @@
 \section{Digitalisierung}
-\todo{Woche 11}
 Ablauf einer PCM (Pulse-Code-Modulation) sind Sampling, Quantisierung mit anschliessender Codierung. Digitalisierung sind diese drei genannten Schritte.
 
-
 Vorteile gegenüber Analogen Signalen sind bessere Signalübertragung, einheitliche Speicherung, Reproduzierbare Probleme und auch zB möglicher Datenschutz.
-
 
 \subsection{Sampling}
 \subsection{Natural Sampling}
@@ -46,7 +43,6 @@ f_s > f_{S_N} = 2 \cdot B_m
 Die \textbf{Nyquist-Frequenz} $f_N = \frac{1}{2}f_s$ ist die maximale Frequenz welche im Signal vorkommen kann und die \textbf{Nyqust-Intervall} $T_{S_N} = T_S < T_{S_N} = \frac{1}{f_{S_N}} = \frac{1}{2B_m}$ die maximale Intervallgrösse fpr alaising-freie Basisband-Abtastung. Diese können auch in Nyquest-Zonen eingeteilt werden.
 
 \subsection{Rekonstruktion}
-\todo{Woche 12}
 Das Ursprüngliche Nachrichtensignal $m(t)$ kann im Frequenzbereich mit der Summe der gewichtetet Abtastwerten einzelner $h_{LPF}$ Funktionen berechnet werden. 
 \[
 h_{LPF}(t) = T_s \cdot \frac{\omega_s}{2\pi}\cdot\frac{\sin(2\pi\cdot f_c \cdot t)}{2\pi\cdot f_c \cdot t}
@@ -65,11 +61,10 @@ H_{ZOH}(\omega) = \tau \cdot \frac{\sin(\frac{\omega\tau}{2})}{\frac{\omega\tau}
 
 
 \subsection{Quantisierung}
-\todo{Woche 12}
 Anzahl Bit pro Codewort eines digitalen Signals muss endlich sein und wird bei gleichförmiger Quantisierung in gleichen Schritten verteilt. Die Auflösung (Anzahl bit) $n$ und Quantisierungsintervall $L = 2^n$ bzw. Quantisierungsstufe $\Delta = \frac{2}{L} = 2^{-(n-1)}$.
 
 \textbf{Beispiel:} CD
-$n = 16$ bit/sample, $L=2^16 = 65536$ und $\Delta = 30.5\mu V$
+$n = 16$ bit/sample, $L=2^{16} = 65536$ und $\Delta = 30.5\mu V$
 
 Der Quantisierungsfehler $q_e$ besitzt eine mittlere Leistung $\overline{P}_{q_e} = \frac{\Delta^2}{12}$. Das Leistungsverhältnis von Nutz- zu Störsignal \textbf{SNR} kann berechnet werden, wobei $C$ der Scheitelfaktor ist:
 \[
@@ -79,3 +74,5 @@ $SNR_q$ in dB mit Anzahl bits $n$:
 \[
 SNR_q = n\cdot 6.02 + 10\log_{10}\left(\frac{3}{C^2}\right)dB
 \]
+
+Dabei ist zB auf einer CD der Scheitelfaktor $C = \sqrt{2}$, weil dies mit einem Sinussignal verglichen werden kann. 
