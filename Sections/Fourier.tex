@@ -54,6 +54,19 @@ Die Fouriertransformation ist die Erweiterung der Fourier-Reihe und beschreibt k
 
 \subsubsection{Eigenschaften}
 Einige wichtige Eigenschaften, weitere sind im \script{24}\\
+\noindent\textbf{Funktionen}
+\begin{align*}
+	\delta(t) &\transform 1(\omega) \\
+	\text{rect}_{-\frac{1}{2},\frac{1}{2}}(t) &\transform \sinc\left(\frac{\omega}{2}\right) \\
+	\cos(\omega_0 t) &\transform \pi\left[\delta(\omega + \omega_0) + \delta(\omega - \omega_0)\right] \\
+	\sin(\omega_0 t) &\transform j\pi\left[\delta(\omega + \omega_0) - \delta(\omega - \omega_0)\right]
+\end{align*}
+
+\noindent\textbf{Vertauschung}
+\begin{align*}
+	X(t) \transform 2\pi \cdot x(\-\omega)
+\end{align*}
+
 \noindent\textbf{Verschiebung im Zeitbereich}
 \begin{align*}
 	x(t - t_0) \transform X(\omega) \cdot e^{-j\omega t_0} 
@@ -62,6 +75,11 @@ Einige wichtige Eigenschaften, weitere sind im \script{24}\\
 \noindent\textbf{Verschiebung im Frequenzbereich}
 \begin{align*}
 	x(t) \cdot e^{j\omega_0 t} \transform X(\omega - \omega_0)
+\end{align*}
+
+\noindent\textbf{Horizontale Streckung}
+\begin{align*}
+	x(\alpha \cdot t) \transform \frac{1}{|\alpha|}X\left(\frac{\omega}{\alpha}\right)
 \end{align*}
 
 \noindent\textbf{Modulationssatz}
@@ -79,3 +97,10 @@ Einige wichtige Eigenschaften, weitere sind im \script{24}\\
 \begin{align*}
 	\int_{-\infty}^{t}x(\tau)d\tau \transform X(\omega)\cdot \left(\frac{1}{j\omega} + \pi \delta(\omega)\right)
 \end{align*}
+
+\subsection{Amplitudendichtespektrum}
+$X_1(t) = \frac{1}{2}\cos(2\pi200t),\quad x_2(t) = \frac{1}{2}\cos(2\pi190t)$ ergeben eine Schwebung für $x_s(t) = x_1(t) + x_2(t)$\\
+\includegraphics[width=\columnwidth]{Images/amplitudendichtespektrum}
+Ein mögliches Trägersignal dazu würde $x_c(t) = A_c\cdot\cos(\omega_ct) = 1\cdot\cos(2\pi195t)$ mit modulierendem Signal $x_m(t) = 1\cdot\cos(2\pi5t)$ lauten.\\
+
+Die Fourierkoeffizienten können durch dividieren mit $2\pi$ bzw $j2\pi$ bei Sinus der Dirac-Stösse erhalten werden. \textbf{Beispiel} $c_{\pm200} = 0.5\pi / 2\pi = 0.25$.
