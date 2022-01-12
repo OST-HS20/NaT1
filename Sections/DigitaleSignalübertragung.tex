@@ -8,7 +8,7 @@ s_2(t) = -s_1(t)
 Unipolar Non-Return-To-Zero Leitungscode:\\
 \includegraphics[width=0.6\columnwidth]{Images/nrz}
 
-Verbesserung des NRZ können durch Scrambling, Bitstopen oder 8b/10b-Codierung erreicht werden.
+Verbesserung des NRZ können durch \textbf{Scrambling}, \textbf{Bitstopen} oder \textbf{8b/10b-Codierung} erreicht werden.
 
 \subsubsection{Bipolar NRZ}\script{95}
 Bipolar NRZ Leitungscode:\\
@@ -41,5 +41,23 @@ Auch Split-Phase, Biphase Level\\
 \subsection{Bandbreitenbedarf}\script{102}
 Der minimale Bandbreite $B_d$ [Hz] kann abgeschätzt werden mit $B_d = \frac{f_s}{2}; f_s = \frac{1}{T_s}$
 
-\subsection{Äquivalente Basisbanddarstellung von Bandpasssignalen} \script{114}\\
+\subsection{Äquivalente Basisbanddarstellung von Bandpasssignalen} 
+Bei QAM werden zB für QAM-16 $2^n \rightarrow n = 4Bit/Symbol$ übertragen. Somit werden für Datenrate $d =10kBit/s$ $\frac{d}{n} = 2500Symbole/s$ übertragen \script{114}\\
 \includegraphics[width=\columnwidth]{Images/qam_basisdarstellung}
+
+\subsection{Pulsformfilter}\script{104}
+Um Bandbreite bei der Übertragung einzusparen, werden Rechtecks Signale, wie sie bei der PCM (Pulse-Code-Modulation) vorkommen, schon beim Sender mit einem Filter Abgeflacht, dadurch hat man die physikalische Bandbreite des Kanals unter eigener Kontrolle.
+
+\subsubsection{Raised-Cosine Puls}
+Ein beliebter Pulseformfilter ist Raised-Cosine Pulse \script{105} welcher definiert ist durch 
+\[
+h(t) = \sinc\left(\frac{\pi}{T}t\right)\cdot\frac{\cos(\alpha\frac{\pi}{T}t)}{1- (\frac{2\alpha\pi}{T}t)^2}
+\]
+Dadurch lassen sich die spektral Bandbreite beschränken und trotzdem beleibt die übertragenen Pulse zum optimalen Zeitpunkt der Auswertung frei von Intersymbol-Interferenz.
+\includegraphics[width=\columnwidth]{Images/raised-cosine_pulse}
+Die \textbf{Symbolrate} mit gegebenen Roll-off-Faktors $\alpha$ und einer Bandbreite $B$, dabei ist die Übertragungsrate maximal bei $\alpha=0$ und minimal bei $\alpha=1$ 
+\[
+d = \frac{2B}{1 + \alpha}
+\]
+\textbf{Beispiel}
+Die Nutzdaten mit $10MHz$ bei 8b/10b-codierten NRZ-Signal sind $d_d = d \cdot \frac{8}{10} = 16MBit/s$, bei Manchester-Code $d_d = d \cdot \frac{1}{2} = 10MBit/s$
